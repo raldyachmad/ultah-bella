@@ -1,33 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
-
-body {
-  width: 100vw;
+body{
+  background-color: #FFCFE6;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url(img/ayang-1.png);      
-  background-repeat: space;
-  background-color: #3f5fff;
+  width: 100vw;
+}
+body h1,body p{
+  color: #FF459E;
+}
+.profile{
+  background-color: #FF8EB0;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.147) 3px 4px 8px 0px;
+  border: white solid 6px;
+  
+}
+button{
+  padding: 10px 29px;
+  font-size: 18px;
+  background-color: #FF459E;
   color: white;
+  border: none;
+}
+button:hover{
+  box-shadow: #ff459f3d 0px 0px 0px 5px; 
 }
 
-h1 {
-  font-size: 4rem;
-}
-
+/* 
 button {
   padding: 8px 20px;
   margin: 20px;
   font-size: 1rem;
-  /* z-index: 1; */
 }
 
 .shadow {
@@ -35,8 +44,6 @@ button {
   height: 100%;
   position: fixed;
   background-color: #00000030;
-  /* opacity: 50%; */
-  /* background: rgba(255, 255, 255, 0.2);  */
   backdrop-filter: blur(7px);
   transition: 1s;
 }
@@ -52,7 +59,6 @@ button {
   background-color: white;
   position: absolute;
   color: #1e1e1e;
-  /* transition: 1s; */
   animation: coba 0.5s;
 }
 
@@ -79,4 +85,4 @@ button {
 
 .alert button:hover {
   box-shadow: #8fa2ff 0px 0px 0px 3px;
-}
+} */
