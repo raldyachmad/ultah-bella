@@ -1,30 +1,76 @@
-const btnAlert = document.getElementById("alert");
+const btnCard = document.getElementById("btnCard");
 
-btnAlert.addEventListener("click", () => {
-  const divBaru = document.createElement("div");
-  const divBaru2 = document.createElement("div");
-  const script = document.getElementsByTagName('script')[0];
-//   document.body.appendChild(divBaru);
-//   document.body.appendChild(divBaru2);
-    document.body.insertBefore(divBaru,script)
-    document.body.insertBefore(divBaru2,script)
+const divBaru = document.createElement("div");
+const divBaru2 = document.createElement("div");
+btnCard.addEventListener("click", () => {
+  // playmusic
+  let audio = document.getElementById('audio');
+  audio.currentTime = 9
+  audio.play();
+  audio.addEventListener("timeupdate", function() {
+    if (audio.currentTime >= 27) {
+      audio.pause();
+      audio.currentTime = 9;
+      audio.play();
+    }
+  });
 
-  divBaru.classList.toggle("shadow");
-  divBaru2.classList.add("alert");
+  function addCard(){
+    const script = document.getElementsByTagName("script")[0];
   
-  const pAlert = document.querySelector('div.alert');
+    document.body.insertBefore(divBaru, script);
+    document.body.insertBefore(divBaru2, script);
+  
+    divBaru.classList.add("blur");
+    divBaru2.classList.add("card");
 
-  pAlert.innerHTML=`<p>🎂</p>
-  <p>Selamat Ulang Tahun</p>
-  <button id="keluar">Keluar</button>`;
+  };
+  function closeCard(){
+    document.body.removeChild(blur);
+    document.body.removeChild(card);
+  };
 
-    const btnKeluar = document.getElementById('keluar');
+  addCard();
 
-  btnKeluar.addEventListener('click',()=>{
-    const hapusD1 = document.querySelector('div.shadow');
-    const hapusD2 = document.querySelector('div.alert');
-    document.body.removeChild(hapusD1);
-    document.body.removeChild(hapusD2);
+  const card = document.querySelector("div.card");
+  const blur = document.querySelector("div.blur");
+  card.innerHTML = `<div class="textArea taCenter">
+  <button id="close">×</button>
+  <p class="arabic al-center">بَارَكَ اللَّهُ فِي عُمْرِكْ</p>
+  <p class="latin al-center">Barakallah fii umrik</p>
+  <p class="al-center">“Semoga Allah melimpahkan keberkahan dalam bertambahnya usiamu.”</p>
+</div>
+<div class="btnArea">
+  <button id='lanjut1'>Lanjut!</button>
+  </div>`;
+  
+  const btnClose = document.getElementById("close");
+  btnClose.addEventListener("click", () => {
+    closeCard();
+  });
+// pesan 2
+const lanjut1 = document.getElementById('lanjut1');
+lanjut1.addEventListener('click',()=>{
+  closeCard();
+  addCard();
+  card.innerHTML=`<button id="close">×</button>
+  <div class="textArea">
+  <p>Mudah-mudahan sing janten :</p>
+  <ul>
+        <li>bageur,</li> 
+        <li>sholehah,</li>
+        <li>pinter,</li>
+        <li>sukses,</li>
+        <li>istrina miliyarder (miliyarder-na Raldy)😁.</li>
+        </ul>
+      <p class="arabic al-center">أٰمِيْنْ</p>
+    </div>
+    <div class="btnArea">
+    <button id="lanjut2">Lanjut!</button>
+    </div>`;
+    const btnClose = document.getElementById("close");
+    btnClose.addEventListener("click", () => {
+      closeCard();
+    });
   })
 });
-
