@@ -11,7 +11,6 @@
 }
 body {
   background-color: #ffcfe6;
-/*   overflow: hidden; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +101,7 @@ button {
   color: white;
   border: none;
   border-radius: 4px;
-  z-index: 2;
+  z-index: 0;
 }
 button:hover {
   box-shadow: #ff459f3d 0px 0px 0px 5px;
@@ -144,12 +143,11 @@ footer p {
   width: 100%;
   height: 100%;
   position: fixed;
-  top:0;
+  top: 0;
   background-color: #00000030;
   backdrop-filter: blur(8px);
   transition: 2s;
 }
-
 .card {
   background-color: white;
   box-shadow: #00000025 4px 4px 22px;
@@ -160,7 +158,6 @@ footer p {
   border-radius: 5px;
   animation: show 0.5s;
 }
-
 @keyframes show {
   0% {
     scale: 0;
@@ -183,11 +180,9 @@ footer p {
   top: 0;
   right: 0;
 }
-
 .card button#close:hover {
   color: #ffc5d6;
 }
-
 .textArea {
   height: 70%;
   display: flex;
@@ -208,7 +203,6 @@ footer p {
 .textArea ul {
   padding-left: 28px;
 }
-
 .arabic {
   color: #ff459e;
   font-size: 26px !important;
@@ -217,14 +211,56 @@ footer p {
 }
 .latin {
   font-weight: 500;
-
   font-style: italic;
   margin-bottom: 7px;
 }
-
 .btnArea {
   height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.notification {
+  width: 160px;
+  height: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 14px;
+  z-index: 1;
+  color: #ff8eb0;
+  border-radius: 100px;
+  border: 2px solid #ff8eb0;
+  box-shadow: 4px 4px 0px #ff8eb0;
+  cursor: pointer;
+}
+.toTop {
+  animation-name: toTop;
+  animation-duration: 0.5s;
+}
+@keyframes toTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-70px);
+    opacity: 0;
+    display: none;
+  }
+}
+.notification .kotak {
+  width: 13px;
+  height: 13px;
+  background-color: #ff8eb0;
+  display: block;
+  margin-right: 8px;
+  border-radius: 1px;
+}
+.notification .text {
+  color: #ff8eb0;
+}
+.gede {
+  font-size: 60px !important;
 }
